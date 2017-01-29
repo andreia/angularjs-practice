@@ -6,6 +6,8 @@ angular.module('LunchCheckerApp', [])
 
 LunchCheckController.$inject = ['$scope'];
 function LunchCheckController($scope) {
+    const MAX_RECOMMEND_ITEMS = 3;
+
     $scope.items        = "";
     $scope.message      = "";
     $scope.textboxClass = "";
@@ -34,7 +36,7 @@ function LunchCheckController($scope) {
     }
 
     function getMessage(itemsNumber) {
-        if (itemsNumber > 3) {
+        if (itemsNumber > MAX_RECOMMEND_ITEMS) {
             return "Too much!";
         }
 
